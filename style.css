@@ -7,6 +7,8 @@
   --clr-primary-400: hsl(245, 67%, 19%);
 
   --clr-secondary-400: hsl(10, 74%, 30%);
+  --clr-secondary-300: hsl(5, 64%, 60%);
+  --clr-secondary-100: hsl(5, 54%, 80%);
 
   --clr-neutral-100: hsl(0, 4%, 86%);
   --clr-neutral-900: rgb(21, 20, 20);
@@ -244,8 +246,14 @@ p:not([class]) {
   font-size: var(--fs-btn);
   color: var(--clr-neutral-100);
   background-color: var(--clr-accent-400);
-  box-shadow: 0 1em 1em -1em blue;
+  box-shadow: 0 1em 0.5em -1em blue;
 }
+
+.btn-red {
+  background-color: var(--clr-secondary-400);
+  box-shadow: 0 0.5em 0.3em -0.5em red;
+}
+
 .button[data-type="inverted"] {
   color: var(--clr-accent-400);
   background-color: var(--clr-neutral-100);
@@ -254,6 +262,10 @@ p:not([class]) {
 .button:hover,
 .button:focus-visible {
   background-color: var(--clr-accent-300);
+}
+.btn-red:hover,
+.btn-red:focus-visible {
+  background-color: var(--clr-secondary-100);
 }
 
 .button[data-type="inverted"]:hover,
