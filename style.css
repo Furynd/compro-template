@@ -204,6 +204,13 @@ svg {
   padding-block: var(--size-700);
 }
 
+.margin-block-400 {
+  margin-block: var(--size-400);
+}
+.margin-block-700 {
+  margin-block: var(--size-700);
+}
+
 .even-columns {
   display: grid;
   gap: 1rem;
@@ -309,7 +316,8 @@ p:not([class]) {
 }
 
 .nav-list a:hover,
-.nav-list a:focus {
+.nav-list a:focus,
+.nav-list a.active {
   color: var(--clr-accent-400);
 }
 
@@ -538,4 +546,109 @@ p:not([class]) {
 
 .main-text {
   font-size: var(--fs-500);
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 100;
+  inherits: false;
+}
+
+
+.counter-text {
+  font: 800 30px system-ui;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: 50vw;
+  left: 0vw;
+  width: 100vw;
+  color: aliceblue;
+}
+
+.counter {
+  animation: counter 2s ease-in-out;
+  animation-iteration-count: 1;
+  counter-reset: num var(--num);
+  font: 800 40px system-ui;
+  padding: 2rem;
+}
+.counter::after {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 100;
+  }
+}
+
+.map {
+  background-color: #2F2F2F;
+
+}
+
+
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #89849b;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 24vw;
+  top: 30vw;
+  margin: -20px 0 0 -20px;
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.pin.b {
+  left: 40vw;
+  top: 22vw;
+  animation-duration: 0.9s;
+}
+
+.pin.c {
+  left: 44vw;
+  top: 25vw;
+  animation-duration: 1.2s;
+}
+
+.pin.d {
+  left: 83vw;
+  top: 34vw;
+  animation-duration: 1.5s;
+}
+
+.pin::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #2F2F2F;
+  position: absolute;
+  border-radius: 50%;
+}
+
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px) rotate(-45deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px) rotate(-45deg);
+  }
+  80% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
 }
