@@ -591,6 +591,25 @@ p:not([class]) {
 
 }
 
+.location {
+  position: absolute;
+  left: 24vw;
+  top: 30vw;
+  display: block;
+}
+
+.location.b {
+  left: 40vw;
+  top: 22vw;
+}
+.location.c {
+  left: 44vw;
+  top: 25vw;
+}
+.location.d {
+  left: 83vw;
+  top: 34vw;
+}
 
 .pin {
   width: 30px;
@@ -599,8 +618,6 @@ p:not([class]) {
   background: #89849b;
   position: absolute;
   transform: rotate(-45deg);
-  left: 24vw;
-  top: 30vw;
   margin: -20px 0 0 -20px;
   animation-name: bounce;
   animation-fill-mode: both;
@@ -608,20 +625,14 @@ p:not([class]) {
 }
 
 .pin.b {
-  left: 40vw;
-  top: 22vw;
   animation-duration: 0.9s;
 }
 
 .pin.c {
-  left: 44vw;
-  top: 25vw;
   animation-duration: 1.2s;
 }
 
 .pin.d {
-  left: 83vw;
-  top: 34vw;
   animation-duration: 1.5s;
 }
 
@@ -651,4 +662,21 @@ p:not([class]) {
   100% {
     transform: translateY(0) rotate(-45deg);
   }
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  left: -5px;
+  top: 17px;
+  background-color: aliceblue;
+  padding: 5px;
+  border: aqua solid 2px;
+  border-radius: 3px;
+  width: auto;
+}
+
+.location:hover .popup {
+  display: block;
+  z-index: 1;
 }
