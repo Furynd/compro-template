@@ -624,15 +624,15 @@ p:not([class]) {
   animation-duration: 1s;
 }
 
-.pin.b {
+.b .pin {
   animation-duration: 0.9s;
 }
 
-.pin.c {
+.c .pin {
   animation-duration: 1.2s;
 }
 
-.pin.d {
+.d .pin {
   animation-duration: 1.5s;
 }
 
